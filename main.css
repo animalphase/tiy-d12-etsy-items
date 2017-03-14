@@ -1,0 +1,33 @@
+
+html {
+  color: #444;
+}
+
+
+h1 {
+  margin-left: 2rem;
+}
+header img {
+  display: block;
+  width: 100%;
+}
+
+
+main {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+
+footer {
+  padding: 3rem;
+  text-align: center;
+  background: #444;
+  color: #aaa;
+}
