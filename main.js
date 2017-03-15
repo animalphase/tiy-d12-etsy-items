@@ -4,9 +4,10 @@ var answerSections = document.querySelectorAll('.answer');
 
 function addObjectTitlesToAnswer(answerField, answerArray)
 {
+  var target = document.querySelector('.' + answerField);
+
   answerArray.forEach(function(item, i, arr)
-  {
-    var target = document.querySelector('.' + answerField);
+  {  
     target.innerHTML +=
     '<br>' + item.title + '<br>';
   });
@@ -87,14 +88,28 @@ addObjectTitlesToAnswer('answer4', woodenItems);
 
 
 
+
+
+
+
+
 itemsWithMoreThan8Materials = items.filter(function(item, i, array)
 {
   return ( item.materials.length >= 8 );
 });
-// itemsWithMoreThan8Materials.forEach(function(item, i, arr){
-//
-// });
-addObjectTitlesToAnswer('answer5', itemsWithMoreThan8Materials);
+
+var target8plus = document.querySelector('.answer5');
+itemsWithMoreThan8Materials.forEach(function(item, i, arr)
+{
+  target8plus.innerHTML +=
+  '<h3>' + item.title + '</h3><ul>' ;
+  item.materials.forEach(function(material, i, array){
+    target8plus.innerHTML +=
+    '<li>' + material + '</li>' ;
+  });
+  target8plus.innerHTML += '</ul>' ;
+});
+//addObjectTitlesToAnswer('answer5', itemsWithMoreThan8Materials);
 
 
 itemsMadeBySellers = items.filter(function(item, i, array)
